@@ -11,8 +11,8 @@
 
   --bg: #f8fafc;
   --panel-bg: #FFFFFF;
-  --panel-border: #CCCCCC;
-  --panel-title: #343f44;
+  --panel-border: #000000;
+  --panel-title: #5f9ab5;
   --panel-text: #54666d;
   --btn: #3eb0ef;
 
@@ -61,7 +61,7 @@ border: var(--panel-border) 1px solid;
 }
 #toggleMode:checked {
   --bg: #020202;
-  --panel-bg: #111413;
+  --panel-bg: #ffffff;
   --panel-border: #1f2322;
   --panel-title: #8e9294;
   --panel-text: #505456;
@@ -85,11 +85,14 @@ ul {
 .header {
   background-color: var(--black);
   box-shadow: 1px 1px 5px 0px var(--gray);
-  position: sticky;
   top: 0;
   width: 100%;
   z-index: 999;
+
+
+  
 }
+
 /* Logo */
 .logo {
   display: inline-block;
@@ -172,6 +175,27 @@ ul {
   display: flex;
   justify-content: center;
   flex-direction: column;
+
+}
+.stiky{
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border: var(--panel-border) 1px solid;
+  background-color: var(--panel-bg);
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 20%;
+  height: 80vh;
+  float: left;
+}
+.stiky ul{
+  margin: 10px;
+}
+.stiky ul li{
+  color: var(--panel-title);
+  font-size: 20px;
+
 }
 
 .contact-form {
@@ -537,7 +561,7 @@ footer {
 /* Responsiveness */
 @media (min-width: 768px) {
   .nav {
-    max-height: 50px;
+    max-height: 60px;
     top: 0;
     position: relative;
     float: right;
@@ -565,6 +589,9 @@ footer {
 
 
 @media only screen and (max-width: 500px) {
+  .header {
+position: fixed;
+  }
   .section-card {
     grid-column: 2 / span 6;
     grid-template-columns: repeat(6, 1fr);
@@ -572,5 +599,12 @@ footer {
   }
   .card {
     grid-column-end: span 6;
+  }
+  .nav{
+    max-height: 20px;
+
+  }
+  .stiky{
+    display: none;
   }
 }
